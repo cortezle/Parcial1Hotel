@@ -12,26 +12,20 @@ import java.util.Calendar;
  * @author DanielLeonardo
  */
 public class Fecha {
-    private Calendar dia, mes, annio;
-
-    public Fecha(Calendar dia, Calendar mes, Calendar annio) {
-        this.dia = dia;
-        this.mes = mes;
-        this.annio = annio;
+      
+    public static void asignar_fecha(){
+        // Instanciamos el objeto Calendar
+        Calendar calendar = Calendar.getInstance();
+        // Obtenemos el valor del año, mes y día.
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int date = calendar.get(Calendar.DATE);
+        
+        System.out.println("AÑO ACTUAL: " + year);
+        System.out.println("MES ACTUAL: " + (month+1));
+        System.out.println("DÍA ACTUAL: " + date);       
+                
+        
     }
-
-    public Calendar getDia() {
-        return dia;
-    }
-
-    public Calendar getMes() {
-        return mes;
-    }
-
-    public Calendar getAnnio() {
-        return annio;
-    }
-    
-   
     
 }

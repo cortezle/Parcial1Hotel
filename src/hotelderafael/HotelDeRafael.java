@@ -16,6 +16,7 @@ public class HotelDeRafael {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Fecha.asignar_fecha();
     }
     
 }
