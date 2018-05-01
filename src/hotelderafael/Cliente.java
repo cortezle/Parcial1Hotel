@@ -11,4 +11,5 @@ package hotelderafael;
  */
 public class Cliente {
     
+    
 }
