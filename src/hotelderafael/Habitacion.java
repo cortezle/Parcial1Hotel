@@ -10,8 +10,76 @@ package hotelderafael;
  * @author Lucho
  */
 public class Habitacion {
-    private int tipo;
+  
     private String npiso;
     private double precio;
+    private String estado;
+    private String tipo;
+    private int nombre;
+
+    //inicializamos constructor vacio
+    public Habitacion() {
+    }
+
+    //agregamos el constructor lleno
+    public Habitacion(String npiso, double precio, String estado, String tipo, int nombre) {
+        this.npiso = npiso;
+        this.precio = precio;
+        this.estado = estado;
+        this.tipo = tipo;
+        this.nombre = nombre;
+    }
+    
+    
+     //ahora incializaremos get y set de los atributos
+
+    public String getNpiso() {
+        return npiso;
+    }
+
+    public void setNpiso(String npiso) {
+        this.npiso = npiso;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public int getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(int nombre) {
+        this.nombre = nombre;
+    }
+    
+    //ahora crearemos el metodo de cambiar precio
+    public void modificarHabitacion(Habitacion hab){
+        double precion;
+
+    }
+   
     
 }
+    
+
