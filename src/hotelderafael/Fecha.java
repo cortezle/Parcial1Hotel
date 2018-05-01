@@ -13,4 +13,25 @@ import java.util.Calendar;
  */
 public class Fecha {
     private Calendar dia, mes, annio;
+
+    public Fecha(Calendar dia, Calendar mes, Calendar annio) {
+        this.dia = dia;
+        this.mes = mes;
+        this.annio = annio;
+    }
+
+    public Calendar getDia() {
+        return dia;
+    }
+
+    public Calendar getMes() {
+        return mes;
+    }
+
+    public Calendar getAnnio() {
+        return annio;
+    }
+    
+    
+    
 }
