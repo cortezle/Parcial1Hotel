@@ -123,7 +123,7 @@ public class Paquete {
             case 2:
                 System.out.println("Cuantos dias extra?\n");
                 dias_extra = entrada.nextInt();
-                setCosto__extra_por_dia(dias_extra*this.costo);
+                setCosto__extra_por_dia(dias_extra*getCosto());
                 
                 System.out.println("Tu total sera de: $"+getCosto__extra_por_dia());
                 break;
