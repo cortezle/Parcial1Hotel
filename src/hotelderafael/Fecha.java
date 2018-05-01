@@ -5,10 +5,12 @@
  */
 package hotelderafael;
 
+import java.util.Calendar;
+
 /**
  *
  * @author DanielLeonardo
  */
 public class Fecha {
-    
+    private Calendar dia, mes, annio;
 }
