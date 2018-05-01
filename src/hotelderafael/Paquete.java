@@ -5,7 +5,7 @@
  */
 
 package hotelderafael;
-
+import java.util.Scanner;
 /**
  *
  * @author Luisa Arevalo <00038617@uca.edu.sv>
@@ -70,7 +70,61 @@ public class Paquete {
         this.costo__extra_por_dia = costo__extra_por_dia;
     }
     
-    
-    
+    //  Se creo el metodo modificar
+    public String modificar(){
+        Scanner entrada = new Scanner(System.in);
+        String description,Package;
+        float cost, costo_dias_extra;
+        int dias_extra,opcion,options;
+        
+        System.out.println("Que desea modificar?"
+                + "1.Tipo de paquete\n"
+                + "2.Dias Extra\n\n"
+                + "Opcion:");
+        
+        opcion = entrada.nextInt();
+        
+        switch(opcion){
+            case 1:
+                System.out.println("Que tipo de paquete sera?:\n");
+                Package = entrada.nextLine();
+                this.tipo_paquete = Package;
+                System.out.println("Cual es la nueva descripcion que desea agregarle?:\n");
+                description = entrada.nextLine();
+                this.descripcion = description;
+                System.out.println("Cuanto sera el costo de este paquete?:\n");
+                cost = entrada.nextFloat();
+                System.out.println("Tendra dias extra?:\n"
+                        + "1. Si\n"
+                        + "2. No\n\n"
+                        + "Opcion: ");
+                options = entrada.nextInt();
+                if (options == 1){
+                    System.out.println("Cuantos dias seran?\n");
+                    dias_extra = entrada.nextInt();
+                    costo_dias_extra = dias_extra*cost;
+                    System.out.println("Tu total seria: "+ costo_dias_extra);
+                    System.out.println("\n");
+                }
+                else if(options == 2){
+                    System.out.println("Ok, su costo total es: "+cost);
+                }
+                else{
+                    System.out.println("Error");
+                }
+                break;
+            case 2:
+                System.out.println("Cuantos dias extra?\n");
+                dias_extra = entrada.nextInt();
+                this.costo__extra_por_dia = dias_extra*this.costo;
+                System.out.println("Tu total sera de: $"+this.costo__extra_por_dia);
+                break;
+            default:
+                System.out.println("Opcion incorrecta :(");
+                break;
+        }        
+        
+        return "El cambio se realizo con exito";
+    }  
 
 }
