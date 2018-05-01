@@ -88,21 +88,28 @@ public class Paquete {
             case 1:
                 System.out.println("Que tipo de paquete sera?:\n");
                 Package = entrada.nextLine();
-                this.tipo_paquete = Package;
+                setTipo_paquete(Package);
+                
                 System.out.println("Cual es la nueva descripcion que desea agregarle?:\n");
                 description = entrada.nextLine();
-                this.descripcion = description;
+                setDescripcion(description);
+                
                 System.out.println("Cuanto sera el costo de este paquete?:\n");
                 cost = entrada.nextFloat();
+                setCosto(cost);
+                
                 System.out.println("Tendra dias extra?:\n"
                         + "1. Si\n"
                         + "2. No\n\n"
                         + "Opcion: ");
                 options = entrada.nextInt();
+                
                 if (options == 1){
+                    
                     System.out.println("Cuantos dias seran?\n");
                     dias_extra = entrada.nextInt();
                     costo_dias_extra = dias_extra*cost;
+                    
                     System.out.println("Tu total seria: "+ costo_dias_extra);
                     System.out.println("\n");
                 }
@@ -116,8 +123,9 @@ public class Paquete {
             case 2:
                 System.out.println("Cuantos dias extra?\n");
                 dias_extra = entrada.nextInt();
-                this.costo__extra_por_dia = dias_extra*this.costo;
-                System.out.println("Tu total sera de: $"+this.costo__extra_por_dia);
+                setCosto__extra_por_dia(dias_extra*this.costo);
+                
+                System.out.println("Tu total sera de: $"+getCosto__extra_por_dia());
                 break;
             default:
                 System.out.println("Opcion incorrecta :(");
