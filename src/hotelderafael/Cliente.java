@@ -45,6 +45,14 @@ public class Cliente {
         this.tarjeta = tarjeta;
     }
     
+    public boolean pago(){
+        return false;
+        
+    }
     
+    public boolean verificar_reserva(){
+        return false;
+        
+    }
     
 }
