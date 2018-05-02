@@ -50,9 +50,9 @@ public class ListaClientes {
     public void Mostrar_Cliente() {
         for (Cliente e : Lista_Clientes) {
             System.out.println("=================================\n");
-            System.out.println("Nombre: " + e.getNombre());
-            System.out.println("ID: " + e.getId_cliente());
-            System.out.println("Tarjeta de Credito: " + e.getTarjeta());
+            System.out.println("Nombre: \t" + e.getNombre());
+            System.out.println("ID: \t" + e.getId_cliente());
+            System.out.println("Tarjeta de Credito: \t" + e.getTarjeta());
             System.out.println("=================================\n");
         }
     }
@@ -66,9 +66,9 @@ public class ListaClientes {
         for(int i = 0; i<Lista_Clientes.size(); i++){
             if(Lista_Clientes.get(i).getId_cliente().equals(id)){
                 System.out.println("=== Cliente encontrado ===\n");
-                System.out.println("Nombre : "+Lista_Clientes.get(i).getNombre());
-                System.out.println("ID: "+Lista_Clientes.get(i).getId_cliente());
-                System.out.println("Tarjeta: "+Lista_Clientes.get(i).getTarjeta());
+                System.out.println("Nombre : \t"+Lista_Clientes.get(i).getNombre());
+                System.out.println("ID: \t"+Lista_Clientes.get(i).getId_cliente());
+                System.out.println("Tarjeta: \t"+Lista_Clientes.get(i).getTarjeta());
                 break;
             }
             else{
@@ -87,12 +87,12 @@ public class ListaClientes {
         
         for(int i = 0; i<Lista_Clientes.size(); i++){
             if(Lista_Clientes.get(i).getId_cliente().equals(id)){
-                System.out.println("=== Cliente por ser eliminado ===\n");
+                System.out.println("\n=== Cliente por ser eliminado ===\n");
                 System.out.println("Nombre : "+Lista_Clientes.get(i).getNombre());
                 System.out.println("ID: "+Lista_Clientes.get(i).getId_cliente());
                 System.out.println("Tarjeta: "+Lista_Clientes.get(i).getTarjeta());
                 
-                System.out.println("Realmente desea eliminarlo? 1. Si, 2. No:\n");
+                System.out.println("\nRealmente desea eliminarlo? 1. Si, 2. No:\n");
                 opcion = entrada.nextInt();
                 if(opcion == 1){
                     System.out.println("Eliminando...");
@@ -106,6 +106,7 @@ public class ListaClientes {
             }
             else{
                 System.out.println("El cliente no se encuentra en el sistema...");
+                break;
             }
         }        
     }
