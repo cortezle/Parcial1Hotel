@@ -17,7 +17,8 @@ public class HotelDeRafael {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // T ListaClientes lista = new ListaClientes();
+        
         ListaClientes lista = new ListaClientes();
         int i = 0;
         Scanner entrada = new Scanner(System.in);
@@ -51,6 +52,14 @@ public class HotelDeRafael {
                     break;
             }
         } while (i != -1);
+ 
+    
+        ListaHabitacion listahab = new ListaHabitacion();
+        int npiso=listahab.addpiso();
+        int canth= listahab.agregarpisosyhabitacion(npiso);
+        listahab.generar_habitaciones(canth, listahab);
+       
+        listahab.menu_habitacion(listahab);
  
     }
 
