@@ -14,7 +14,8 @@ import java.util.Scanner;
  */
 public class ListaHabitacion {
      private ArrayList<Habitacion> habitaciones;
-    private int i = 1;
+     private String[] LetraDePiso = {"A","B","C","D","E","F","G","H","I","J","K"};
+    private int i = 1,lp=0;
 
     public ListaHabitacion() {
         habitaciones = new ArrayList<>();
@@ -26,7 +27,14 @@ public class ListaHabitacion {
        
             habitacion.setEstado("Disponible");
             habitacion.setNombre(i++);
-            habitacion.setNpiso("a");
+            habitacion.setNpiso(LetraDePiso[lp]);
+            if(i ==11){
+                i=1;
+                habitacion.setNpiso(LetraDePiso[lp++]);
+            }
+            
+            
+
             habitacion.setPrecio(30);
         
        
@@ -63,11 +71,10 @@ public class ListaHabitacion {
    public void Mostrar_Habitacion() {
         for (Habitacion e : habitaciones) {
             System.out.println("=================================\n");
-            System.out.println(e.getNombre());
-            System.out.println( e.getEstado());
-            System.out.println(  e.getNpiso());
-            System.out.println(  e.getPrecio());
-            System.out.println(  e.getTipo());
+            System.out.println("Numero de habitacion "+ e.getNpiso() +e.getNombre());
+            System.out.println("Estado de la habitacion " + e.getEstado());
+            System.out.println("Precio $" + e.getPrecio());
+            System.out.println("Tipo de habitacion " +e.getTipo());
             System.out.println("=================================\n");
         }
     }
@@ -91,6 +98,45 @@ public class ListaHabitacion {
         }
         
     }
+        public void CambiarPrecio_Habitacion(){
+            
+            Scanner entrada = new Scanner(System.in);
+            double precio;
+            System.out.println("Ingrese nuevo precio: ");
+            precio = entrada.nextDouble();
+            for(Habitacion e : habitaciones){
+                e.setPrecio(precio);
+        }
+        }
+        
+        public void CambiarEstado_Habitacion(){
+            Scanner entrada = new Scanner(System.in);
+            String npiso;
+            int nhab;
+            System.out.println("Ingrese No. de piso ");
+            npiso = entrada.nextLine();
+            System.out.println("Ingrese No. de habitacion ");
+            nhab = entrada.nextInt();
+                    for(int i = 0; i<habitaciones.size(); i++){
+            if(habitaciones.get(i).getNpiso().equals(npiso)){
+               
+                habitaciones.get(i).setEstado("En Mantenimiento");
+                System.out.println("=== Habitacion encontrada ===\n");
+                System.out.println("=================================\n");
+                System.out.println("Numero de habitacion "+habitaciones.get(i).getNpiso()+habitaciones.get(i).getNombre());
+                System.out.println("Estado de la habitacion " +habitaciones.get(i).getEstado());
+                System.out.println("Precio $" + habitaciones.get(i).getPrecio());
+                System.out.println("Tipo de habitacion "+habitaciones.get(i).getTipo());
+                System.out.println("=================================\n");
+                break;
+            }
+            
+            else{
+                System.out.println("El cliente no se encuentra en el sistema");
+            }
+        }
+        }
+       
        public void menu_habitacion(ListaHabitacion lista){
        
         int l = 0;
@@ -101,16 +147,26 @@ public class ListaHabitacion {
             System.out.println("=== Menu ===\n"
                     + "1. Mostrar\n"
                     + "2. Buscar\n"
+                    + "3. Cambiar Precio a habitacion\n"
+                    + "4.Cambiar estado de habitacion\n"
                     + "opcion: ");
             l = entrada.nextInt();
             switch (l) {
                 case 1:
-                    System.out.println("case1");
+                    System.out.println("Mostrando todas las habitaciones");
                     lista.Mostrar_Habitacion();
                     break;
                 case 2:
-                    System.out.println("case 2");
+                    System.out.println("Estamos buscando una habitacion para usted");
                     lista.Buscar_Habitacion();
+                    break;
+                case 3:
+                    System.out.println("Cambiaremos el precio");
+                    lista.CambiarPrecio_Habitacion();
+                    break;
+                case 4:
+                    System.out.println("Cambiaremos el estado");
+                    CambiarEstado_Habitacion();
                     break;
                 default:
                     System.out.println("Te equivocaste :(");

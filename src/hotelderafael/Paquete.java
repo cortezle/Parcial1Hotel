@@ -77,7 +77,7 @@ public class Paquete {
         float cost, costo_dias_extra;
         int dias_extra,opcion,options;
         
-        System.out.println("Que desea modificar?"
+        System.out.println("Que desea modificar?\n"
                 + "1.Tipo de paquete\n"
                 + "2.Dias Extra\n\n"
                 + "Opcion:");
