@@ -5,8 +5,6 @@
  */
 package hotelderafael;
 
-import java.util.HashMap;
-
 /**
  *
  * @author Lucho

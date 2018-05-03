@@ -34,6 +34,7 @@ public class ListaHabitacion {
             }
             
             
+            habitacion.setNpiso("a");
             habitacion.setPrecio(30);
         
        
@@ -135,6 +136,7 @@ public class ListaHabitacion {
             }
         }
         }
+       
        public void menu_habitacion(ListaHabitacion lista){
        
         int l = 0;

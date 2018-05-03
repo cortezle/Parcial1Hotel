@@ -61,6 +61,10 @@ public class HotelDeRafael {
        
         listahab.menu_habitacion(listahab);
  
+ 
+        Menu m = new Menu();
+        m.Opcion_Seleccionada();
+        
     }
 
 }
