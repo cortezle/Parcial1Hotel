@@ -14,8 +14,8 @@ import java.util.Scanner;
  */
 public class ListaHabitacion {
      private ArrayList<Habitacion> habitaciones;
-     private String[] LetraDePiso = {"A","B","C","D","E","F","G","H","I"};
-    private int i = 1,lp;
+     private String[] LetraDePiso = {"A","B","C","D","E","F","G","H","I","J","K"};
+    private int i = 1,lp=0;
 
     public ListaHabitacion() {
         habitaciones = new ArrayList<>();
@@ -34,7 +34,7 @@ public class ListaHabitacion {
             }
             
             
-            habitacion.setNpiso("a");
+
             habitacion.setPrecio(30);
         
        
