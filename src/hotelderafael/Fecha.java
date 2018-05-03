@@ -12,7 +12,11 @@ import java.util.Calendar;
  * @author DanielLeonardo
  */
 public class Fecha {
-      
+    private int year, month, date;
+
+    public Fecha() {
+    }
+    
     public static void asignar_fecha(){
         // Instanciamos el objeto Calendar
         Calendar calendar = Calendar.getInstance();
