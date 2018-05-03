@@ -45,7 +45,8 @@ public class Cliente {
         this.tarjeta = tarjeta;
     }
     
-    public void pago(int tarjeta){
+    public void pago(){
+        System.out.println("Su pago a sido realizado con exito");
     }
     public boolean verificar_reserva(){
         return false;
