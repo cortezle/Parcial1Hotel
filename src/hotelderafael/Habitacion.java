@@ -12,18 +12,15 @@ import java.util.HashMap;
  * @author Lucho
  */
 public class Habitacion {
-  
-    private String npiso;
+  private String npiso;
     private double precio;
     private String estado;
     private String tipo;
     private int nombre;
 
-    //inicializamos constructor vacio
     public Habitacion() {
     }
 
-    //agregamos el constructor lleno
     public Habitacion(String npiso, double precio, String estado, String tipo, int nombre) {
         this.npiso = npiso;
         this.precio = precio;
@@ -31,9 +28,6 @@ public class Habitacion {
         this.tipo = tipo;
         this.nombre = nombre;
     }
-    
-    
-     //ahora incializaremos get y set de los atributos
 
     public String getNpiso() {
         return npiso;
@@ -75,12 +69,6 @@ public class Habitacion {
         this.nombre = nombre;
     }
     
-    //ahora crearemos el metodo de cambiar precio
-    public void modificarHabitacion(Habitacion hab){
-        double precion;
-
-    }
-    //HashMap<>;
    
     
 }
