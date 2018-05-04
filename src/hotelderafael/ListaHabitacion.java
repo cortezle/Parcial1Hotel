@@ -132,7 +132,7 @@ public class ListaHabitacion {
             }
             
             else{
-                System.out.println("El cliente no se encuentra en el sistema");
+                System.out.println("");
             }
         }
         }

@@ -47,10 +47,12 @@ public class Menu {
                 opcion = option.nextInt();
                 switch (opcion) {
                     case 1:
+                        //Cambio Hecho por @Lucho.
                             System.out.println("####### Menu de Habitaciones #######\n\n"
                                     + "1. Generar Habitaciones\n"
                                     + "2. Mostrar Habitaciones\n"
-                                    + "3. Buscar Habitacion\n\n"
+                                    + "3. Buscar Habitacion\n"
+                                    + "4. Darle Mantenimiento a una habitacion\n"
                                     + "Opcion: ");
                             opcion1 = option.nextInt();
                             switch(opcion1){
@@ -62,6 +64,9 @@ public class Menu {
                                     break;
                                 case 3:
                                     p.Buscar_Habitacion();
+                                    break;
+                                case 4:
+                                    p.CambiarEstado_Habitacion();
                                     break;
                                 default:
                                     System.out.println("Te equivocaste de opcion :l\n");
