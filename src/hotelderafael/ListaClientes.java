@@ -27,7 +27,8 @@ public class ListaClientes {
     }
     //Metodo Agregar Cliente
     public void Agregar_Cliente() {
-
+        int cont = 0;
+        
         Cliente p = new Cliente();
         Scanner entrada = new Scanner(System.in);
         String nombre, id, tarjeta;
@@ -43,6 +44,13 @@ public class ListaClientes {
         System.out.println("Tarjeta de Credito: ");
         tarjeta = entrada.nextLine();
         p.setTarjeta(tarjeta);
+        //Cambio realizado por @Lucho
+        cont++;
+        if(cont<0){
+            if(p.getId_cliente().equals(id)){
+                System.out.println("Id repetido, adios");
+            }
+        }
 
         Lista_Clientes.add(p);
     }
