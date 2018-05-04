@@ -40,7 +40,7 @@ public class Menu {
         String palabras;
         Scanner option = new Scanner(System.in);
         Scanner numero = new Scanner(System.in);
-        
+        p.generar_habitaciones(p.agregarpisosyhabitacion(p.addpiso()), p);
         while (opcion != 5) {
             Menu_Opciones();
             try {
@@ -49,24 +49,24 @@ public class Menu {
                     case 1:
                         //Cambio Hecho por @Lucho.
                             System.out.println("####### Menu de Habitaciones #######\n\n"
-                                    + "1. Generar Habitaciones\n"
-                                    + "2. Mostrar Habitaciones\n"
-                                    + "3. Buscar Habitacion\n"
-                                    + "4. Darle Mantenimiento a una habitacion\n"
+                                    + "1. Mostrar Habitaciones\n"
+                                    + "2. Buscar Habitaciones\n"
+                                    + "3. Darle Mantenimiento a una habitacion\n"
+                                    + "4. Cambiar de precio a habitaciones\n"
                                     + "Opcion: ");
                             opcion1 = option.nextInt();
                             switch(opcion1){
                                 case 1:
-                                    p.generar_habitaciones(p.agregarpisosyhabitacion(p.addpiso()), p);
-                                    break;
-                                case 2:
                                     p.Mostrar_Habitacion();
                                     break;
-                                case 3:
+                                case 2:
                                     p.Buscar_Habitacion();
                                     break;
-                                case 4:
+                                case 3:
                                     p.CambiarEstado_Habitacion();
+                                    break;
+                                case 4:
+                                    p.CambiarPrecio_Habitacion();
                                     break;
                                 default:
                                     System.out.println("Te equivocaste de opcion :l\n");

@@ -132,7 +132,7 @@ public class ListaHabitacion {
             }
             
             else{
-                System.out.println("");
+                //System.out.println("");
             }
         }
         }
