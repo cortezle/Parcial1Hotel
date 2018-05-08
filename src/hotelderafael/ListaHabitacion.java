@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class ListaHabitacion {
      private ArrayList<Habitacion> habitaciones;
-     private String[] LetraDePiso = {"A","B","C","D","E","F","G","H","I","J","K"};
+     private String[] LetraDePiso = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
     private int i = 1,lp=0;
 
     public ListaHabitacion() {
@@ -23,8 +23,7 @@ public class ListaHabitacion {
 
     public void addhabitacion() {
         Habitacion habitacion = new Habitacion();
-        //habitaciones.add(habitacion);
-       
+         double precio=1;
             habitacion.setEstado("Disponible");
             habitacion.setNombre(i++);
             habitacion.setNpiso(LetraDePiso[lp]);
@@ -32,13 +31,7 @@ public class ListaHabitacion {
                 i=1;
                 habitacion.setNpiso(LetraDePiso[lp++]);
             }
-            
-            
-
             habitacion.setPrecio(30);
-        
-       
-
         //condicion acerca de una habitacion doble o sencilla
         if (habitacion.getNombre() % 2 == 0) {
             habitacion.setTipo("doble");
@@ -47,6 +40,11 @@ public class ListaHabitacion {
         }
         
         habitaciones.add(habitacion);
+               /* for(int i = 0; i<habitaciones.size(); i++){
+            if(habitaciones.get(i).getNpiso() == LetraDePiso[cantpisos]){
+                habitacion.setPrecio(precio*1.10);
+            }
+        }*/
 
     }
 
@@ -55,6 +53,13 @@ public class ListaHabitacion {
         int cantpisos;
         System.out.println("Cuantos pisos tiene su hotel de 10 habitaciones?");
         cantpisos = leer.nextInt();
+        return cantpisos;
+    }
+    public double addPrecio(){
+        Scanner leer = new Scanner(System.in);
+        double cantpisos;
+        System.out.println("Precio de habitacion base?");
+        cantpisos = leer.nextDouble();
         return cantpisos;
     }
 
@@ -68,6 +73,7 @@ public class ListaHabitacion {
                     
         }
     }
+ 
    public void Mostrar_Habitacion() {
         for (Habitacion e : habitaciones) {
             System.out.println("=================================\n");
@@ -118,7 +124,7 @@ public class ListaHabitacion {
             System.out.println("Ingrese No. de habitacion ");
             nhab = entrada.nextInt();
                     for(int i = 0; i<habitaciones.size(); i++){
-            if(habitaciones.get(i).getNpiso().equals(npiso)){
+            if(habitaciones.get(i).getNpiso().equals(npiso) && (habitaciones.get(i).getNombre() == nhab)){
                
                 habitaciones.get(i).setEstado("En Mantenimiento");
                 System.out.println("=== Habitacion encontrada ===\n");
@@ -132,7 +138,35 @@ public class ListaHabitacion {
             }
             
             else{
-                //System.out.println("");
+                
+            }
+        }
+        }
+        
+                public void Reservar_Habitacion(){
+            Scanner entrada = new Scanner(System.in);
+            String npiso;
+            int nhab;
+            System.out.println("Ingrese No. de piso ");
+            npiso = entrada.nextLine();
+            System.out.println("Ingrese No. de habitacion ");
+            nhab = entrada.nextInt();
+                    for(int i = 0; i<habitaciones.size(); i++){
+            if(habitaciones.get(i).getNpiso().equals(npiso) && (habitaciones.get(i).getNombre() == nhab)){
+               
+                                habitaciones.get(i).setEstado("Ocupado");
+                System.out.println("=== Habitacion encontrada ===\n");
+                System.out.println("=================================\n");
+                System.out.println("Numero de habitacion "+habitaciones.get(i).getNpiso()+habitaciones.get(i).getNombre());
+                System.out.println("Estado de la habitacion " +habitaciones.get(i).getEstado());
+                System.out.println("Precio $" + habitaciones.get(i).getPrecio());
+                System.out.println("Tipo de habitacion "+habitaciones.get(i).getTipo());
+                System.out.println("=================================\n");
+                break;
+            }
+            
+            else{
+                
             }
         }
         }
