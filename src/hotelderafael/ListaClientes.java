@@ -13,11 +13,12 @@ import java.util.ArrayList;
  * @author Luisa Arevalo <00038617@uca.edu.sv>
  */
 public class ListaClientes {
+
     /**
      * Clase ListaClientes donde contendra a todos los clientes que se registren
      * en el hotel.
      */
-    
+
     //Se crea un ArrayList de tipo Cliente
     private ArrayList<Cliente> Lista_Clientes;
 
@@ -25,13 +26,36 @@ public class ListaClientes {
     public ListaClientes() {
         Lista_Clientes = new ArrayList<>();
     }
+
+    public boolean Cliente_Repetido(String id) {
+        int cont = 0;
+        if (Lista_Clientes.isEmpty()) {
+            //System.out.println("No hay clientes en el sistema\n");
+            return false;
+        } 
+        else {
+            for (int i = 0; i < Lista_Clientes.size(); i++) {
+                if (Lista_Clientes.get(i).getId_cliente().equals(id)) {
+                    cont++;
+                }
+            }
+            if (cont >= 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+    }
+ 
+    
     //Metodo Agregar Cliente
     public void Agregar_Cliente() {
-        int cont = 0;
-        
+
         Cliente p = new Cliente();
         Scanner entrada = new Scanner(System.in);
         String nombre, id, tarjeta;
+        int cont = 0;
 
         System.out.println("Nombre del Cliente: ");
         nombre = entrada.nextLine();
@@ -44,16 +68,16 @@ public class ListaClientes {
         System.out.println("Tarjeta de Credito: ");
         tarjeta = entrada.nextLine();
         p.setTarjeta(tarjeta);
-        //Cambio realizado por @Lucho
         cont++;
-        if(cont<0){
-            if(p.getId_cliente().equals(id)){
-                System.out.println("Id repetido, adios");
-            }
-        }
 
-        Lista_Clientes.add(p);
+        if (Cliente_Repetido(p.getId_cliente())) {
+            System.out.println("El cliente que esta ingresando no puede tener el mismo id\n"
+                    + "de otro cliente. Vuelve a intentarlo :l\n");
+        } else {
+            Lista_Clientes.add(p);
+        }
     }
+
     //Metodo para mostrar los clientes de la lista
     public void Mostrar_Cliente() {
         for (Cliente e : Lista_Clientes) {
@@ -64,27 +88,28 @@ public class ListaClientes {
             System.out.println("=================================\n");
         }
     }
+
     //Metodo para encontrar a un cliente en especifico
-    public void Buscar_Cliente(){
+    public void Buscar_Cliente() {
         String id;
         Scanner entrada = new Scanner(System.in);
         System.out.println("Escriba el ID del cliente: ");
         id = entrada.nextLine();
-        
-        for(int i = 0; i<Lista_Clientes.size(); i++){
-            if(Lista_Clientes.get(i).getId_cliente().equals(id)){
+
+        for (int i = 0; i < Lista_Clientes.size(); i++) {
+            if (Lista_Clientes.get(i).getId_cliente().equals(id)) {
                 System.out.println("=== Cliente encontrado ===\n");
-                System.out.println("Nombre : \t"+Lista_Clientes.get(i).getNombre());
-                System.out.println("ID: \t"+Lista_Clientes.get(i).getId_cliente());
-                System.out.println("Tarjeta: \t"+Lista_Clientes.get(i).getTarjeta());
+                System.out.println("Nombre : \t" + Lista_Clientes.get(i).getNombre());
+                System.out.println("ID: \t" + Lista_Clientes.get(i).getId_cliente());
+                System.out.println("Tarjeta: \t" + Lista_Clientes.get(i).getTarjeta());
                 break;
-            }
-            else{
+            } else {
                 System.out.println("El cliente no se encuentra en el sistema");
             }
         }
-        
+
     }
+
     //Metodo para eliminar a un cliente de la lista
     public void eliminar() {
         String id;
@@ -92,30 +117,28 @@ public class ListaClientes {
         int opcion;
         System.out.println("Escriba el ID del cliente: ");
         id = entrada.nextLine();
-        
-        for(int i = 0; i<Lista_Clientes.size(); i++){
-            if(Lista_Clientes.get(i).getId_cliente().equals(id)){
+
+        for (int i = 0; i < Lista_Clientes.size(); i++) {
+            if (Lista_Clientes.get(i).getId_cliente().equals(id)) {
                 System.out.println("\n=== Cliente por ser eliminado ===\n");
-                System.out.println("Nombre : "+Lista_Clientes.get(i).getNombre());
-                System.out.println("ID: "+Lista_Clientes.get(i).getId_cliente());
-                System.out.println("Tarjeta: "+Lista_Clientes.get(i).getTarjeta());
-                
+                System.out.println("Nombre : " + Lista_Clientes.get(i).getNombre());
+                System.out.println("ID: " + Lista_Clientes.get(i).getId_cliente());
+                System.out.println("Tarjeta: " + Lista_Clientes.get(i).getTarjeta());
+
                 System.out.println("\nRealmente desea eliminarlo? 1. Si, 2. No:\n");
                 opcion = entrada.nextInt();
-                if(opcion == 1){
+                if (opcion == 1) {
                     System.out.println("Eliminando...");
                     Lista_Clientes.remove(i);
-                }
-                else{
+                } else {
                     System.out.println("Entonces no...");
                 }
-                
+
                 break;
-            }
-            else{
+            } else {
                 System.out.println("El cliente no se encuentra en el sistema...");
                 break;
             }
-        }        
+        }
     }
 }
